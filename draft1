@@ -1,15 +1,18 @@
 
 
-
 import java.util.Scanner;
 
 public class MyCalculator {
 
 	public static void main(String[] args) {
 		Scanner scnr = new Scanner(System.in); 
+		String restart = ""; 
 		
+		
+		do {
 		String typeOfCalc;
 		String standardOperation;
+		
 		
 		int count; 
 		double userNum;  
@@ -17,221 +20,238 @@ public class MyCalculator {
 		double userNum1;
 		double trigNum;
 		
+		
+		
 		//Initial Prompt
 		System.out.println("Enter the calculator mode: Standard/Scientific?");
 		typeOfCalc = scnr.next(); 
-		
+
 		// Two types of Calculators
-		
+
 		// In case of Standard calculator
-		if(typeOfCalc.equalsIgnoreCase("Standard")) {
-		
+		if(typeOfCalc.equalsIgnoreCase("standard")) {
+           System.out.println("The calculator will operate in standard mode.");
+           
 			//Prompt for operation
 			System.out.println("Enter '+' for addition, '-' for subtractions, '*' for multiplication, '/' for division");
 			standardOperation = scnr.next();
-			
+
 			//while loop for in case of invalidity
 			if(standardOperation.equals("+") || standardOperation.equals("-") || standardOperation.equals("*") || standardOperation.equals("/")) {
-				
+
 			//CHECK THE OPERATION
-				
+
 			//if addition
 			if(standardOperation.equals("+")) {
-				
+
 				//asking Count 
-				System.out.println("How many numbers do you want to add?:");
+				System.out.println("How many numbers do you want to add?");
 				count = scnr.nextInt(); 
-				
-				System.out.println(" Enter " + count + " numbers:");
-				
+
+				System.out.println(" Enter " + count + " numbers");
+
 				for(int i=0; i< count; i++) {
-					
+
 				userNum = scnr.nextDouble();
 				result += userNum; 
-				
+
 				}
 				System.out.println("Result: " + result);
 			}
-			
+
 			// If subtraction
 			else if(standardOperation.equals("-")) {
-				
-				System.out.println("How many numbers do you want to subtract?:");
+
+				System.out.println("How many numbers do you want to subtract?");
 				count = scnr.nextInt(); 
-				
-				System.out.println(" Enter " + count + " numbers:");
+
+				System.out.println(" Enter " + count + " numbers");
 				userNum1 = scnr.nextDouble();
 				result = userNum1; 
-				
+
 				for(int i=0; i< count-1; i++) {
-					
+
 				userNum = scnr.nextDouble();
 				result -= userNum; 
 				}
 				System.out.println("Result: " + result);
 			}
-			
+
 			//if multiplication
 			else if(standardOperation.equals("*")) {
-				
+
 				result = 1; 
-				
-				System.out.println("How many numbers do you want to multiply?:");
+
+				System.out.println("How many numbers do you want to multiply?");
 				count = scnr.nextInt(); 
-				
-				System.out.println(" Enter " + count + " numbers:");
-				
+
+				System.out.println(" Enter " + count + " numbers");
+
 				for(int k = 0; k< count; k++) {
-				
+
 				userNum = scnr.nextDouble();
 				result *= userNum; 
-				
+
 				}
 				System.out.println("Result: " + result);
 			}
-			
+
 			//if division 
 			else if (standardOperation.equals("/")) {
-				
-				System.out.println("How many numbers do you want to divide:");
+
+				System.out.println("How many numbers do you want to divide?");
 				count = scnr.nextInt(); 
-				
-				System.out.println(" Enter " + count + " numbers:");
+
+				System.out.println(" Enter " + count + " numbers");
 				userNum1 = scnr.nextDouble();
 				result = userNum1; 
-				
+
 				for(int k = 0; k < count-1; k++) {
-					
+
 					userNum = scnr.nextDouble();
 					result /= userNum; 
-					
+
 					}
 					System.out.println("Result: " + result);
-			
+
 			}
-			
-			
+
+
 			}
-			
+
 			//if invalid
 			 else {	
 				 System.out.println("Invalid operator division Enter '+' for addition, '-' for subtractions, '*' for multiplication, '/' for division:"); 	
 			}
 		}
-		
+
 		// in case of Scientific mode 
-		else {
+		else if (typeOfCalc.equalsIgnoreCase("scientific")) {
+			 System.out.println("The calculator will operate in scientific mode.");
 			//Prompt for operation
 			System.out.println("Enter '+' for addition, '-' for subtractions, '*' for multiplication, '/' for division, 'sin' for sin x, 'cos' for cos x, 'tan' for tan x:");
 			standardOperation = scnr.next();
-			
+
 			//while loop for in case of invalidity
 			if(standardOperation.equals("+") || standardOperation.equals("-") || standardOperation.equals("*") || standardOperation.equals("/") || standardOperation.equals("sin") || standardOperation.equals("cos") || standardOperation.equals("tan") ) {
-				
+
 			//CHECK THE OPERATION
-				
+
 			//if addition
 			if(standardOperation.equals("+")) {
-				
+
 				//asking Count 
-				System.out.println("How many numbers do you want to add?:");
+				System.out.println("How many numbers do you want to add?");
 				count = scnr.nextInt(); 
-				
-				System.out.println(" Enter " + count + " numbers:");
-				
+
+				System.out.println(" Enter " + count + " numbers");
+
 				for(int i=0; i< count; i++) {
-					
+
 				userNum = scnr.nextDouble();
 				result += userNum; 
-				
+
 				}
 				System.out.println("Result: " + result);
 			}
-			
+
 			// If subtraction
 			else if(standardOperation.equals("-")) {
-				
-				System.out.println("How many numbers do you want to subtract?:");
+
+				System.out.println("How many numbers do you want to subtract?");
 				count = scnr.nextInt(); 
-				
-				System.out.println(" Enter " + count + " numbers:");
+
+				System.out.println(" Enter " + count + " numbers");
 				userNum1 = scnr.nextDouble();
 				result = userNum1; 
-				
+
 				for(int i=0; i< count-1; i++) {
-					
+
 				userNum = scnr.nextDouble();
 				result -= userNum; 
 				}
 				System.out.println("Result: " + result);
 			}
-			
+
 			//if multiplication
 			else if(standardOperation.equals("*")) {
-				
+
 				result = 1; 
-				
-				System.out.println("How many numbers do you want to multiply?:");
+
+				System.out.println("How many numbers do you want to multiply?");
 				count = scnr.nextInt(); 
-				
-				System.out.println(" Enter " + count + " numbers:");
-				
+
+				System.out.println(" Enter " + count + " numbers");
+
 				for(int k = 0; k< count; k++) {
-				
+
 				userNum = scnr.nextDouble();
 				result *= userNum; 
-				
+
 				}
 				System.out.println("Result: " + result);
 			}
-			
+
 			//if division 
 			else if (standardOperation.equals("/")) {
-				
-				System.out.println("How many numbers do you want to divide:");
+
+				System.out.println("How many numbers do you want to divide?");
 				count = scnr.nextInt(); 
-				
-				System.out.println(" Enter " + count + " numbers:");
+
+				System.out.println(" Enter " + count + " numbers");
 				userNum1 = scnr.nextDouble();
 				result = userNum1; 
-				
+
 				for(int k = 0; k < count-1; k++) {
-					
+
 					userNum = scnr.nextDouble();
 					result /= userNum; 
-					
+
 					}
 					System.out.println("Result: " + result);
 			}
-					
-			//FIXME FOR COS 
+
+			// for sin
 			else if(standardOperation.equals("sin")){
-						
+				System.out.println("Enter a number in radians to find the sine");
+				 trigNum = scnr.nextDouble(); 
+
+				 trigNum = Math.sin(trigNum); 
+
+				 System.out.println("Result: " + trigNum);
 					}
-			
-			//FIXME FOR SIN
+
+			// FOR COS
 			else if (standardOperation.equals("cos")) {
-				
+
 				System.out.println("Enter a number in radians to find the cosine");
 				 trigNum = scnr.nextDouble(); 
-				 
+
 				 trigNum = Math.cos(trigNum); 
-				 
+
 				 System.out.println("Result: " + trigNum);
 			}
-			
-			//FIXME FOR TAN 
+
+			// for tan 
 			else if (standardOperation.equals("tan")) {
-				
+				System.out.println("Enter a number in radians to find the tangent");
+				 trigNum = scnr.nextDouble(); 
+
+				 trigNum = Math.tan(trigNum); 
+
+				 System.out.println("Result: " + trigNum);
 			}
-			
+
 		}
 			else {
-				 System.out.println("Invalid operator division Enter '+' for addition, '-' for subtractions, '*' for multiplication, '/' for division,  'sin' for sin x, 'cos' for cos x, 'tan' for tan x: :"); 	
+				 System.out.println("Invalid operator " +standardOperation+" Enter '+' for addition, '-' for subtractions, '*' for multiplication, '/' for division,  'sin' for sin x, 'cos' for cos x, 'tan' for tan x: :"); 	
 			}
+		}
 		
-
+			System.out.println("Do you want to start over? (Y/N)");
+			restart = scnr.next();
+			
+		} while(restart.equals("Y")); 
+		System.out.println("Goodbye");
 	}
-
 	}
-}
