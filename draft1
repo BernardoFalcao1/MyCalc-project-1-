@@ -1,5 +1,12 @@
 
 
+/* My name is Bernardo Falcao 
+ * email:
+ * Project Description:
+ * Link: 
+ * 
+ */
+
 import java.util.Scanner;
 
 public class MyCalculator {
@@ -37,6 +44,7 @@ public class MyCalculator {
 			standardOperation = scnr.next();
 
 			//while loop for in case of invalidity
+			while(standardOperation.equals("+") || standardOperation.equals("-") || standardOperation.equals("*") || standardOperation.equals("/")) {
 			if(standardOperation.equals("+") || standardOperation.equals("-") || standardOperation.equals("*") || standardOperation.equals("/")) {
 
 			//CHECK THE OPERATION
@@ -48,7 +56,7 @@ public class MyCalculator {
 				System.out.println("How many numbers do you want to add?");
 				count = scnr.nextInt(); 
 
-				System.out.println(" Enter " + count + " numbers");
+				System.out.println("Enter " + count + " numbers");
 
 				for(int i=0; i< count; i++) {
 
@@ -65,7 +73,7 @@ public class MyCalculator {
 				System.out.println("How many numbers do you want to subtract?");
 				count = scnr.nextInt(); 
 
-				System.out.println(" Enter " + count + " numbers");
+				System.out.println("Enter " + count + " numbers");
 				userNum1 = scnr.nextDouble();
 				result = userNum1; 
 
@@ -85,7 +93,7 @@ public class MyCalculator {
 				System.out.println("How many numbers do you want to multiply?");
 				count = scnr.nextInt(); 
 
-				System.out.println(" Enter " + count + " numbers");
+				System.out.println("Enter " + count + " numbers");
 
 				for(int k = 0; k< count; k++) {
 
@@ -102,7 +110,7 @@ public class MyCalculator {
 				System.out.println("How many numbers do you want to divide?");
 				count = scnr.nextInt(); 
 
-				System.out.println(" Enter " + count + " numbers");
+				System.out.println("Enter " + count + " numbers");
 				userNum1 = scnr.nextDouble();
 				result = userNum1; 
 
@@ -121,8 +129,10 @@ public class MyCalculator {
 
 			//if invalid
 			 else {	
-				 System.out.println("Invalid operator division Enter '+' for addition, '-' for subtractions, '*' for multiplication, '/' for division:"); 	
-			}
+				 System.out.println("Invalid operator " +standardOperation);
+				 System.out.println("Enter '+' for addition, '-' for subtractions, '*' for multiplication, '/' for division,  'sin' for sin x, 'cos' for cos x, 'tan' for tan x: :"); 	
+				}
+		}
 		}
 
 		// in case of Scientific mode 
@@ -144,7 +154,7 @@ public class MyCalculator {
 				System.out.println("How many numbers do you want to add?");
 				count = scnr.nextInt(); 
 
-				System.out.println(" Enter " + count + " numbers");
+				System.out.println("Enter " + count + " numbers");
 
 				for(int i=0; i< count; i++) {
 
@@ -161,7 +171,7 @@ public class MyCalculator {
 				System.out.println("How many numbers do you want to subtract?");
 				count = scnr.nextInt(); 
 
-				System.out.println(" Enter " + count + " numbers");
+				System.out.println("Enter " + count + " numbers");
 				userNum1 = scnr.nextDouble();
 				result = userNum1; 
 
@@ -181,7 +191,7 @@ public class MyCalculator {
 				System.out.println("How many numbers do you want to multiply?");
 				count = scnr.nextInt(); 
 
-				System.out.println(" Enter " + count + " numbers");
+				System.out.println("Enter " + count + " numbers");
 
 				for(int k = 0; k< count; k++) {
 
@@ -198,7 +208,7 @@ public class MyCalculator {
 				System.out.println("How many numbers do you want to divide?");
 				count = scnr.nextInt(); 
 
-				System.out.println(" Enter " + count + " numbers");
+				System.out.println("Enter " + count + " numbers");
 				userNum1 = scnr.nextDouble();
 				result = userNum1; 
 
@@ -244,7 +254,8 @@ public class MyCalculator {
 
 		}
 			else {
-				 System.out.println("Invalid operator " +standardOperation+" Enter '+' for addition, '-' for subtractions, '*' for multiplication, '/' for division,  'sin' for sin x, 'cos' for cos x, 'tan' for tan x: :"); 	
+				 System.out.println("Invalid operator " +standardOperation);
+				 System.out.println("Enter '+' for addition, '-' for subtractions, '*' for multiplication, '/' for division,  'sin' for sin x, 'cos' for cos x, 'tan' for tan x: :"); 	
 			}
 		}
 		
